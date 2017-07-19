@@ -6,6 +6,8 @@ Trello.configure do |config|
   config.member_token = ENV['TRELLO_MEMBER_TOKEN']
 end
 
+# Find all the new listings in Zoopla
+
 query = {
   api_key: ENV['ZOOPLA_API_KEY'],
   order_by: 'age',
@@ -24,12 +26,16 @@ response = HTTParty.get(
 
 listings = response.parsed_response['listing']
 
+# Create the lists to put the cards in
+
 board = Trello::Board.find('HMKRAEKm')
 
 incoming_list = Trello::List.create(
   name: 'New listings',
   board_id: board.id
 )
+
+# Create the cards
 
 listings.each do |listing|
   Trello::Card.create(
