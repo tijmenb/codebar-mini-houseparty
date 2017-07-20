@@ -1,7 +1,7 @@
 # Mini houseparty for Codebar
 
 MVP of [tijmenb/houseparty](https://github.com/tijmenb/houseparty) to illustrate
-a lightning talk at Codebar.
+a lightning talk at Codebar. The [slides are here too](slides.pdf). 
 
 ## Running this
 
